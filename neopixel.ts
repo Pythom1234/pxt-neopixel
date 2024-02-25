@@ -32,7 +32,7 @@ enum NeoPixelMode {
 }
 
 //% color=#2699BF icon="\uf110"
-namespace neopixelForWuKong {
+namespace neopixel {
     export class Strip {
         buf: Buffer;
         pin: DigitalPin;
