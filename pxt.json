@@ -9,7 +9,8 @@
     },
     "files": [
         "README.md",
-        "neopixel.ts"
+        "neopixel.ts",
+        "_locales/cs/neopixel-strings.json"
     ],
     "testFiles": [],
     "public": true,
