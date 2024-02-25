@@ -32,7 +32,7 @@ enum NeoPixelMode {
 }
 
 //% color=#2699BF icon="\uf110"
-namespace neopixel {
+namespace neopixelForWuKong {
     export class Strip {
         buf: Buffer;
         pin: DigitalPin;
@@ -41,7 +41,7 @@ namespace neopixel {
         _length: number;
         _mode: NeoPixelMode;
         _matrixWidth: number;
-        //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors"
+        //% block="%strip|show color %rgb=neopixel_colors"
         //% strip.defl=strip
         //% weight=97
         showColor(rgb: number) {
@@ -49,7 +49,7 @@ namespace neopixel {
             this.setAllRGB(rgb);
             this.show();
         }
-        //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue"
+        //% block="%strip|show rainbow from %startHue|to %endHue"
         //% strip.defl=strip
         //% weight=96
         showRainbow(startHue: number = 1, endHue: number = 360) {
@@ -103,26 +103,26 @@ namespace neopixel {
             }
             this.show();
         }
-        //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors"
+        //% block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors"
         //% strip.defl=strip
         //% weight=95
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
         }
-        //% blockId="neopixel_show" block="%strip|show" blockGap=8
+        //% block="%strip|show"
         //% strip.defl=strip
         //% weight=98
         show() {
             ws2812b.sendBuffer(this.buf, this.pin);
         }
-        //% blockId="neopixel_clear" block="%strip|clear"
+        //% block="%strip|clear"
         //% strip.defl=strip
         //% weight=99
         clear(): void {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             this.buf.fill(0, this.start * stride, this._length * stride);
         }
-        //% blockId="neopixel_rotate" block="%strip|rotate pixels by %offset" blockGap=8
+        //% block="%strip|rotate pixels by %offset" blockGap=8
         //% strip.defl=strip
         //% weight=91
         rotate(offset: number = 1): void {
@@ -182,7 +182,7 @@ namespace neopixel {
             this.setBufferRGB(pixeloffset, red, green, blue)
         }
     }
-    //% blockId="neopixel_create" block="NeoPixel"
+    //% block="NeoPixel"
     //% weight=100
     //% trackArgs=0,2
     //% blockSetVariable=strip
@@ -199,12 +199,12 @@ namespace neopixel {
         return strip;
     }
     //% weight=94
-    //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
+    //% block="red %red|green %green|blue %blue"
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
     }
     //% weight=92
-    //% blockId="neopixel_colors" block="%color"
+    //% block="%color"
     export function colors(color: NeoPixelColors): number {
         return color;
     }
@@ -224,7 +224,7 @@ namespace neopixel {
         return b;
     }
     //% weight=93
-    //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
+    //% block="hue %h|saturation %s|luminosity %l"
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
         s = Math.round(s);
