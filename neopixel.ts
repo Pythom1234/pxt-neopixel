@@ -28,7 +28,7 @@ enum NeoPixelMode {
     RGB_RGB = 3
 }
 
-//% color=#2699BF icon="\uf110" block="NeoPixel for WuKong" block.loc.cs="NeoPixel pro WuKong"
+//% color=#2699BF icon="\uf110" block="NeoPixel"
 namespace neopixel {
     export class Strip {
         buf: Buffer;
@@ -179,7 +179,7 @@ namespace neopixel {
             this.setBufferRGB(pixeloffset, red, green, blue)
         }
     }
-    //% block="NeoPixel"
+    //% block="NeoPixel for WuKong"
     //% weight=100
     //% trackArgs=0,2
     //% blockSetVariable=strip

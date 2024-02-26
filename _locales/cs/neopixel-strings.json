@@ -16,8 +16,8 @@
   "neopixel.Strip.showRainbow|block": "%strip|ukaž duhu od %startHue|do %endHue",
   "neopixel.Strip.show|block": "%strip|ukaž",
   "neopixel.colors|block": "%color",
-  "neopixel.create|block": "NeoPixel",
+  "neopixel.create|block": "NeoPixel pro WuKong",
   "neopixel.hsl|block": "odstín %h|tmavost %s|svítivost %l",
   "neopixel.rgb|block": "červená %red|zelená %green|modrá %blue",
-  "{id:category}Neopixel": "NeoPixel pro WuKong"
+  "{id:category}Neopixel": "NeoPixel"
 }
