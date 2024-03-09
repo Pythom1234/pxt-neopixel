@@ -184,7 +184,7 @@ namespace neopixel {
     //% trackArgs=0,2
     //% blockSetVariable=strip
     export function create(): Strip {
-        const mode = NeoPixelMode.RGB_RGB
+        const mode = NeoPixelMode.RGB
         let strip = new Strip();
         let stride = 3;
         strip.buf = pins.createBuffer(4 * stride);
